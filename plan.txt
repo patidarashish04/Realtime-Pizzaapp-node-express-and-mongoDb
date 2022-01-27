@@ -6,7 +6,7 @@
     -Dev dependancy
         -nodemon
 [+] create express server - create a server.js file
-[] git setup and first commit
+[-] git setup and first commit
 [+] install laravel Mix
     -set up js and css file.
 [] Install tailwind css 
@@ -16,7 +16,7 @@
     -order summery section
     -empty cart server
 [] create order controller and link it in server.js
-[] create orders view  with table  for cuastomer  and admin
+[] create orders view with table  for cuastomer and admin
 [] create order single page  with status
 [] create login page  with route
 [] create register  page with route
