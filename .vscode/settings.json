@@ -1,0 +1,82 @@
+{ "better-comments.tags": [
+    
+    {
+        "tag": "!",
+        "color": "#FF2020",
+    },
+    {
+        "tag": "~!",
+        "color": "#000000",
+        "backgroundColor": "#FF2020",
+    },
+    {           
+        "tag": "_",
+        "color": "#FF2020",
+        "underline": true
+    },
+    {
+        "tag": "-",
+        "color": "#FF2D00",
+        "strikethrough": true,
+    },
+    {
+        "tag": "^",
+        "color": "#CD607E",
+    },
+    {
+        "tag": "~^",
+        "color": "#000000",
+        "backgroundColor": "#CD607E",
+    },
+    {
+        "tag": "?",
+        "color": "#0096FF",
+    },
+    {
+        "tag": "~?",
+        "color": "#000000",
+        "backgroundColor": "#0096FF",
+    },
+    
+    {
+        "color": "#75757",
+        "tag": "//",
+    },
+    {
+        "color": "#FF8C00",
+        "tag": "%",
+    },
+    {
+        "tag": "~%",
+        "color": "#000000",
+        "backgroundColor": "#FF8C00",
+    },
+    {
+        "tag": "*",
+        "color": "#66FF66",
+    },
+    {
+        "tag": "~*",
+        "color": "#000000",
+        "backgroundColor": "#29AB87",
+    },
+    {
+        "tag": "#",
+        "color": "#FFFF00",
+    },
+    {
+        "tag": "~#",
+        "color": "#000000",
+        "backgroundColor": "#FFFF00",
+    },
+    {
+        "tag": ">",
+        "color": "#00FFFF",
+    },
+    {
+        "tag": "~>",
+        "color": "#000000",
+        "backgroundColor": "#00FFFF",
+    }
+],
+}
