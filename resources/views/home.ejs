@@ -17,133 +17,23 @@
 <section class="menu container mx-auto py-8">
     <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
 <div class="grid grid-cols-4 col-gap-12 row-gap-16">
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Neapolitan Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">small</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹149
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
+    <% pizzas.forEach(function(pizza){ %>
+        <div class="w-64">
+            <img  class="h-40 mb-4 mx-auto" src="/img/<%=pizza.image%>" alt="allpizza">
+            <div class=" text-center">
+                <h2 class="mb-4 text-lg"><%=pizza.name%></h2>
+                <span class="size py-1 px-4 rounded-full text-xs"><%=pizza.size%></span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class=" font-bold text-lg">₹
+                        <%=pizza.price%>
+                    </span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Chicago Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">Large</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹430
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Sicilian Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">medium</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹399
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Greek Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">large</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹299
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">California Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">small</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹190
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Detroit Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">medium</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹550
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Margherita Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">large</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹450
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="w-64">
-    <img  class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="allpizza">
-    <div class=" text-center">
-        <h2 class="mb-4 text-lg">Cheesy Vegetable Pizza</h2>
-        <span class="size py-1 px-4 rounded-full text-xs">medium</span>
-        <div class="flex items-center justify-around mt-6">
-            <span class=" font-bold text-lg">
-                ₹240
-            </span>
-            <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                <span>+</span>
-                <span class="ml-4">Add</span>
-            </button>
-        </div>
-    </div>
-</div>
+   <% })%>
 </div>
 </section>

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express")
 
 const app = express()
@@ -11,21 +12,39 @@ app.use(expressLayouts)
 app.set("views", path.join(__dirname, "/resources/views"))  //* gaetting views path
 app.set('view engine', "ejs")
 
+//! connect to controller
+require('./routes/web')(app)
+//! connect to mongodb compass
+const mongoose = require('mongoose')
 
+//# Database connection
+const url = 'mongodb://localhost/pizza';
+// Create the database connection 
+mongoose.connect(url); 
 
-    app.get('/',(req, res)=>{        //* for set the page
-    res.render('home')   //% views folder file name access
-    })
-    
-    app.get('/cart', (req , res)=>{
-        res.render('customer/cart')  //% view for cart items
-    })
-    app.get('/login', (req , res)=>{
-        res.render('Auth/login')  //% view for login
-    })
-    app.get('/register', (req , res)=>{
-        res.render('Auth/register')  //% view for register
-    })
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose default connection open to ' + url);
+}); 
+  
+// If the connection throws an error
+mongoose.connection.on('error',function (err) { 
+  console.log('Mongoose default connection error: ' + err);
+}); 
+
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () { 
+  console.log('Mongoose default connection disconnected'); 
+});
+
+// If the Node process ends, close the Mongoose connection 
+process.on('SIGINT', function() {   
+  mongoose.connection.close(function () { 
+    console.log('Mongoose default connection disconnected through app termination'); 
+    process.exit(0); 
+  }); 
+}); 
 
 //* Assets 
 app.use(express.static('Public'));
