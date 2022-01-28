@@ -14,7 +14,6 @@ nav li:last-child a{
     }
 }
 
-
 nav li a{
     transition: $smooth;
     &:hover{
@@ -37,4 +36,18 @@ background: $secondary;
         border-color: $pure;
         color: $pure;
     }
+}
+
+.btn-primary{
+
+    background: $primary;
+    transition: $smooth;
+    &:hover{
+        background: $primary-hover;
+    }
+}
+
+section.cart{
+    background: $secondary;
+
 }

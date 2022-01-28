@@ -8,15 +8,22 @@ const expressLayouts = require('express-ejs-layouts')   //! import layouts
 
 
 
-app.get('/',(req, res)=>{        //* for set the page
-res.render('home')   //% views folder file name access
-})
 
 //# set template engin
 app.use(expressLayouts)
 app.set("views", path.join(__dirname, "/resources/views"))  //* gaetting views path
 app.set('view engine', "ejs")
 
+
+
+app.get('/',(req, res)=>{        //* for set the page
+    res.render('home')   //% views folder file name access
+    })
+    
+    app.get('/cart', (req , res)=>{
+        res.render('customer/cart')  //% view for cart items
+    })
+    
 //* Assets 
 app.use(express.static('Public'));
 
