@@ -48,3 +48,22 @@ section.hero {
 section.cart {
   background: #F8F8F8;
 }
+section.cart .amount {
+  color: #FE5F1E;
+}
+
+section.login {
+  background: #F8F8F8;
+  min-height: 100vh;
+}
+section.login a {
+  color: #FE5F1E;
+}
+
+.group {
+  background: #FE5F1E;
+  transition: all 0.3s ease-in-out;
+}
+.group:hover {
+  background: #b23301;
+}

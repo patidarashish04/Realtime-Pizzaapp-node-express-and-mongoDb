@@ -6,9 +6,6 @@ const path = require("path")   //!  nodejs module import
 const expressLayouts = require('express-ejs-layouts')   //! import layouts
 
 
-
-
-
 //# set template engin
 app.use(expressLayouts)
 app.set("views", path.join(__dirname, "/resources/views"))  //* gaetting views path
@@ -16,14 +13,20 @@ app.set('view engine', "ejs")
 
 
 
-app.get('/',(req, res)=>{        //* for set the page
+    app.get('/',(req, res)=>{        //* for set the page
     res.render('home')   //% views folder file name access
     })
     
     app.get('/cart', (req , res)=>{
         res.render('customer/cart')  //% view for cart items
     })
-    
+    app.get('/login', (req , res)=>{
+        res.render('Auth/login')  //% view for login
+    })
+    app.get('/register', (req , res)=>{
+        res.render('Auth/register')  //% view for register
+    })
+
 //* Assets 
 app.use(express.static('Public'));
 
