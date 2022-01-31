@@ -1,7 +1,7 @@
 function cartcontroller(){
     return {
         cart(req , res){
-            res.render('home')
+            res.render('./customer/cart.ejs')
         }
     }
 }
