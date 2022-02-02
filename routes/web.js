@@ -6,10 +6,12 @@ function initRouts(app){
         homecontroller().index  //%# calling the function from homecontroller
         
         app.get('/', homecontroller().index) //* 2nd parameter will give both req and res
-        app.get('/cart', cartcontroller().cart) //% view for cart items
+       
         app.get('/login', authcontroller().login)   //% view for login
         app.get('/register', authcontroller().register)  //% view for register
      
+        app.get('/cart', cartcontroller().cart) //% view for cart items
+        app.post('/update-cart', cartcontroller().update )
 }
 
 module.exports=initRouts;
