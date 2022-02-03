@@ -22,10 +22,10 @@
        use connection-mongo  for session store
           dependancy
             mangoose , express-session, connect-mongo, dotenv
-    axios to send  ajax request
-    install notification library npm i noty https://ned.im/noty/#/
-[+] create order controller and link it in server.js
-[] create orders view with table for cuastomer and admin
+    -axios to send  ajax request
+    -install notification library npm i noty https://ned.im/noty/#/
+
+[] create orders view with table for customer and admin
 [] create order single page  with status
 [] create login page  with route
 [] create register  page with route
@@ -35,6 +35,7 @@ create register crud
     database connection . dependancy mongoose
 build login using passport
     -install dependancy passport passport-local express-session
+[+] create order controller and link it in server.js
 create new model and put dummy database
 fetch all pizza from db and show on home page 
 add to cart  functionality

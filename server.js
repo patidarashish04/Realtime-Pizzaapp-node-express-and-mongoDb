@@ -1,5 +1,4 @@
 require('dotenv').config()
-//console.log(process.env) 
 const express = require("express")
 //var cookieParser = require('cookie-parser');
 const app = express()
@@ -13,6 +12,7 @@ const cors = require('cors');
 //const cookieSession = require('cookie-session')
 const flash = require('express-flash')  //! initialize flash
 const MongoDbStore = require('connect-mongo')(session) //! import mongo db store and pass session
+const passport = require('passport')
 //MongoDbStore(session); //@  second way to call functiion
 const PORT =process.env.PORT || 3000
 
@@ -46,6 +46,7 @@ process.on('SIGINT', function() {
   }); 
 }); 
 
+
 /*********************** Session Store********************************/
 
 let mongoStore = new MongoDbStore({    //% if we have call class or constrution function we use new keyword
@@ -63,9 +64,13 @@ app.use(session({
   saveUninitialized:false,
   cookie:{ maxAge: 1000  * 60  * 60 * 24 }
 
-
 }))
 
+/**********************Passport Config********************************/
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(flash())
 //app.use(cookieParser());
@@ -77,10 +82,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cors());
 
-//Global middleware
+/********************************* Global middleware *********************/
 app.use((req, res ,next) =>{
   res.locals.session = req.session
+  res.locals.user = req.user
   next()
+  
 })
 
 //# set template engin
