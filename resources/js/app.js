@@ -1,12 +1,15 @@
 import axios from 'axios'
-import flash from 'express-flash'
 import Noty from 'noty'
+//import {initAdmin} from  './admin'
+//import flash from 'express-flash'
 
 let AddtoCart = document.querySelectorAll('.add-to-cart')
 let cartCounter =  document.querySelector('#cartCounter')
 
 function updateCart(pizza) {
-axios.post('/update-cart', pizza).then(res => {
+
+    axios.post("/update-cart", pizza).then((res) => {
+
 cartCounter.innerText = res.data.totalQty
 new Noty({
     type: 'success',
@@ -30,3 +33,11 @@ AddtoCart.forEach((btn) => {
         updateCart(pizza)
     })
 })
+
+const alertMsg = document.querySelector('#success-alert')
+if(alertMsg){
+    setTimeout(()=>{
+        alertMsg.remove()
+    },2000)
+}
+//initAdmin()

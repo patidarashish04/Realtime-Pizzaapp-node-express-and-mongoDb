@@ -1,9 +1,14 @@
 const homecontroller  = require('../app/http/controlles/homecontroller') //! getting data which exported from homecontroller
 const authcontroller  = require('../app/http/controlles/authcontroller') //! getting data which exported from authcontroller
 const cartcontroller  = require('../app/http/controlles/customer/cartcontroller') //! getting data which exported from cartcontroller
+const orderController  = require('../app/http/controlles/customer/orderController') //! getting orders which exported from cartcontroller
+const AdminOrderController  = require('../app/http/controlles/admin/orderController') //! getting orders which exported from cartcontroller
 
-
+/**************************middleware*******************************/
 const guest = require('../app/http/middlewares/guest')
+const auth = require('../app/http/middlewares/auth')
+const admin = require('../app/http/middlewares/admin')
+
 
 function initRouts(app){
         homecontroller().index  //%# calling the function from homecontroller
@@ -18,8 +23,14 @@ function initRouts(app){
 
         app.get('/cart', cartcontroller().cart) //% view for cart items
         app.post('/update-cart', cartcontroller().update )
+
+/**************************Customer Routs*******************************/
+
+        app.post('/orders', auth, orderController().store )
+        app.get('/customer/orders', auth, orderController().index)
        
+/**************************Admin Routs*******************************/
+        app.get('/admin/orders', admin, AdminOrderController().index)
+
 }
-
-
 module.exports = initRouts;
